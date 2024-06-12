@@ -1,9 +1,9 @@
-package org.example
+package org.example.br.com.w3soft.alugames.modelo
 
 data class Jogo(val titulo: String,
           val capa: String
 ) {
-    val descricao = ""
+    var descricao: String? = null
     override fun toString(): String {
         return "Meu Jogo:\n" +
                 "Título: $titulo \n" +
