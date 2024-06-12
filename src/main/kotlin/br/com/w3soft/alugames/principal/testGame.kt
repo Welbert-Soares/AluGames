@@ -6,7 +6,7 @@ fun main() {
 
     val gamer2 = Gamer(
         "Jeni",
-        "jeni@emal.com",
+        "jeni@email.com",
         "01/01/1990",
         "jeni")
 
