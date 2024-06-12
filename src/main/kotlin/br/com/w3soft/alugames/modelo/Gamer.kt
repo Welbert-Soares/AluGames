@@ -5,6 +5,12 @@ import kotlin.random.Random
 data class Gamer(var nome: String, var email:String) {
     var dataNascimento: String? = null
     var usuario: String? = null
+        set(value) {
+            field = value
+            if (idInterno.isNullOrBlank()) {
+                criarIdInterno()
+            }
+        }
     var idInterno: String? = null
         private set
 

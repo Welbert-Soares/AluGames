@@ -21,4 +21,6 @@ fun main() {
     }
 
     println(gamer1)
+    gamer1.usuario = "W3Nitrooo"
+    println(gamer1)
 }
