@@ -1,11 +1,15 @@
 package org.example.br.com.w3soft.alugames.principal
 
+import br.com.w3soft.alugames.modelo.Gamer
 import br.com.w3soft.alugames.servicos.ConsumoApi
 import org.example.br.com.w3soft.alugames.modelo.Jogo
 import java.util.*
 
 fun main() {
     val leitura = Scanner(System.`in`)
+    val gamer = Gamer.criarGamer(leitura)
+    println("Cadastro concluído com sucesso! Dados do gamer: ")
+    println(gamer)
 
     do {
         println("Digite um código de jogo para buscar:")
@@ -37,13 +41,25 @@ fun main() {
                 meuJogo?.descricao = meuJogo?.titulo
             }
 
-            println(meuJogo)
+            gamer.jogosBuscados.add(meuJogo)
         }
 
         println("Deseja buscar outro jogo? S/N")
         val resposta = leitura.nextLine()
 
     } while (resposta.equals("s", true))
+
+    println("Jogos buscados: ")
+    println(gamer.jogosBuscados)
+
+    println("\n Jogos ordenados por título: ")
+    gamer.jogosBuscados.sortBy {
+        it?.titulo
+    }
+
+    gamer.jogosBuscados.forEach {
+        println("Título: " + it?.titulo)
+    }
 
     println("Jogo encontrado com sucesso!")
 }
